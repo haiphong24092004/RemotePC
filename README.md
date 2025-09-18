@@ -5,7 +5,7 @@
 </h2>
 
 <h2 align="center">
-    Ứng dụng tra cứu thời tiết online
+    Ứng dụng Remote Desktop Control
 </h2>
 
 <div align="center">
@@ -21,65 +21,35 @@
 
 </div>
 
+## 1. Giới thiệu hệ thống
 
-# Remote Desktop Control
+Hệ thống **Remote Desktop Control** được phát triển theo mô hình **Client-Server**, cho phép người dùng **điều khiển máy tính từ xa** một cách dễ dàng.  
 
-Dự án **Remote Desktop Control** cho phép người dùng điều khiển máy tính từ xa theo mô hình **Client - Server**.  
-Hệ thống được xây dựng bằng Python với giao diện đồ họa `Tkinter`, hỗ trợ các chức năng chính:
-
-- Kết nối **Server ↔ Client** qua socket.
+👉 **Chức năng chính**:
+- Kết nối **Server ↔ Client** qua **Socket TCP**.
 - Đặt lịch **tắt máy, khởi động lại, mở ứng dụng** từ xa.
-- **Hủy lịch** đã đặt.
-- Truyền dữ liệu và nhận phản hồi theo thời gian thực.
-- Hỗ trợ chụp ảnh màn hình, stream màn hình từ Client về Server.
+- **Hủy lịch** các tác vụ đã đặt.
+- Chụp ảnh màn hình, truyền dữ liệu và stream màn hình từ Client về Server.
+- Giao diện trực quan, dễ sử dụng với **Tkinter GUI**.
 
 ---
 
-## 👨‍💻 Tác giả
-**Nguyễn Hải Phong**
+## 🔧 2. Công nghệ & Ngôn ngữ sử dụng
+
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Tkinter](https://img.shields.io/badge/Tkinter_GUI-FFCC00?style=for-the-badge&logo=python&logoColor=black)](https://docs.python.org/3/library/tkinter.html)
+[![Socket](https://img.shields.io/badge/Socket_Programming-orange?style=for-the-badge&logo=socket.io&logoColor=white)](https://docs.python.org/3/library/socket.html)
+
+**Chi tiết công nghệ:**
+- **Python 3.8+**: Ngôn ngữ lập trình chính.
+- **Tkinter**: Xây dựng giao diện người dùng.
+- **Socket Programming**: Kết nối Client-Server.
+- **MSS, PyAutoGUI**: Chụp ảnh/stream màn hình.
+- **APScheduler**: Lập lịch các tác vụ từ xa.
 
 ---
 
-## 📦 Cài đặt
-
-### 1. Yêu cầu hệ thống
-- Python 3.8+
-- Hệ điều hành: Windows / Linux
-
-### 2. Cài đặt thư viện
-Chạy lệnh sau để cài toàn bộ dependencies:
-
-```bash
-pip install pillow mss pyautogui apscheduler pyperclip
-```
-
-> Lưu ý: Trên Linux, có thể cần cài thêm `python3-tk` để dùng Tkinter:
-> ```bash
-> sudo apt-get install python3-tk
-> ```
-
----
-
-## 🚀 Chạy chương trình
-
-### 1. Khởi động Server
-```bash
-python server_gui.py
-```
-
-### 2. Khởi động Client
-```bash
-python client_gui.py
-```
-
-### 3. Kết nối
-- Chạy **Server** trước, nhập IP của Client vào Server.
-- Client sẽ hiển thị IP của mình để gửi cho Server.
-- Khi kết nối thành công, bạn có thể bắt đầu sử dụng các chức năng.
-
----
-
-## 📸 Demo
+## 🚀 3. Một số hình ảnh
 
 ### Giao diện Server
 ![Server Demo](demo/server.png)
@@ -89,15 +59,55 @@ python client_gui.py
 
 ---
 
-## 🛠️ Chức năng chính
-- **⏰ Đặt lịch tắt máy**: Hẹn giờ tự động tắt máy client.
-- **🔄 Đặt lịch khởi động lại**: Hẹn giờ restart máy client.
-- **📂 Đặt lịch mở ứng dụng**: Mở ứng dụng chỉ định vào thời gian mong muốn.
-- **❌ Hủy lịch**: Xóa toàn bộ các tác vụ đã đặt.
-- **📸 Chụp/stream màn hình** (mở rộng từ `server_controller`).
+## 📝 4. Các bước cài đặt
+
+### Yêu cầu hệ thống:
+- **Python 3.8+**
+- Windows / Linux
+- Thư viện Python cần thiết
+
+### Cài đặt thư viện:
+```bash
+pip install pillow mss pyautogui apscheduler pyperclip
+```
+
+> ⚠️ Với Linux, cần cài thêm Tkinter:
+> ```bash
+> sudo apt-get install python3-tk
+> ```
+
+### Chạy chương trình:
+
+**1. Khởi động Server**
+```bash
+python server_gui.py
+```
+
+**2. Khởi động Client**
+```bash
+python client_gui.py
+```
+
+**3. Kết nối & Sử dụng**
+- Chạy **Server** trước → nhập IP của Client.  
+- Client hiển thị địa chỉ IP của mình để gửi cho Server.  
+- Khi kết nối thành công, có thể sử dụng các chức năng:  
+  - Đặt lịch tắt máy/khởi động lại/mở ứng dụng.  
+  - Hủy lịch tác vụ.  
+  - Chụp ảnh màn hình/stream màn hình.  
 
 ---
 
-## 📄 License
-Dự án dành cho mục đích học tập và nghiên cứu.  
-Bạn có thể tự do sử dụng và chỉnh sửa.
+## ✉️ 5. Liên hệ
+
+**Tác giả**: Nguyễn Hải Phong  
+
+📧 **Email**: phongankhoai3@gmail.com
+
+🏫 **Trường**: Đại học Đại Nam - Khoa Công nghệ Thông tin  
+
+---
+
+## 📄 6. License
+
+Dự án dành cho mục đích **học tập & nghiên cứu**.  
